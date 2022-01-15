@@ -1,0 +1,10 @@
+#!/bin/sh
+
+/sbin/modprobe g_mass_storage file=/var/www/html/exfathax.img stall=0 removable=1
+
+echo "Content-type: text/html"
+echo ""
+
+echo "OK"
+
+exit 0

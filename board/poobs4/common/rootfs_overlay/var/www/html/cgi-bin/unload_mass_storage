@@ -1,0 +1,10 @@
+#!/bin/sh
+
+/sbin/modprobe -r g_mass_storage
+
+echo "Content-type: text/html"
+echo ""
+
+echo "OK"
+
+exit 0
