@@ -27,7 +27,6 @@ BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="board/orangepi/orangepi-zero/linux-extra
 # Filesystem Images
 BR2_TARGET_ROOTFS_EXT2=y
 BR2_TARGET_ROOTFS_EXT2_4=y
-# BR2_TARGET_ROOTFS_TAR is not set
 BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/ $(BR2_EXTERNAL_pOOBs4_PATH)/board/orangepi/orangepi-zero/rootfs_overlay/"
 BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
 
@@ -42,10 +41,6 @@ BR2_TARGET_UBOOT_NEEDS_PYTHON3=y
 BR2_TARGET_UBOOT_NEEDS_PYLIBFDT=y
 BR2_TARGET_UBOOT_SPL=y
 BR2_TARGET_UBOOT_SPL_NAME="u-boot-sunxi-with-spl.bin"
-
-# Toolchain
-# enable wchar support for php
-BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
 
 # Host Utilities
 BR2_PACKAGE_HOST_LINUX_HEADERS_CUSTOM_5_12=y
