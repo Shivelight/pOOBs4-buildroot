@@ -1,0 +1,29 @@
+#
+# pOOBs4 common defconfig
+#
+
+# Kernel
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/linux-mass-storage.config"
+
+# Filesystem Images
+BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/"
+BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
+
+# Packages
+# use haveged for better entropy
+BR2_PACKAGE_URANDOM_SCRIPTS=n
+BR2_PACKAGE_HAVEGED=y
+
+# busybox
+BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox-minimal.config"
+BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/busybox-minimal-extra.config"
+
+# openssh
+BR2_PACKAGE_OPENSSH=y
+
+# hostapd
+BR2_PACKAGE_HOSTAPD=y
+
+# dnsmasq
+BR2_PACKAGE_DNSMASQ=y
+BR2_PACKAGE_DNSMASQ_DHCP=y
