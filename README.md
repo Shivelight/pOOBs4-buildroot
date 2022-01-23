@@ -6,11 +6,11 @@ This repository contains [buildroot] [external tree][br-external] for building a
 
 ## Building
 
-Clone the repository and buildroot version 2021.11:
+Clone the repository and buildroot from my personal repository (will be pinned to buildroot 2022.02 when it's released):
 
 ```sh
 git clone https://github.com/Shivelight/pOOBs4-buildroot
-git clone -b 2021.11 --depth 1 git://git.buildroot.net/buildroot
+git clone -b pOOBs4 --depth 1 https://github.com/Shivelight/buildroot
 ```
 
 Configure buildroot to use BR2_EXTERNAL tree and start building. Replace `<boardname>` with your board defconfig available in [configs/](configs) directory or from the [Supported Board](#supported-board) section:
