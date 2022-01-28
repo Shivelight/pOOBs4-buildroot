@@ -1,4 +1,0 @@
-#!/bin/sh
-
-# Enable OrangePi Zero WIFI module XR819
-/sbin/modprobe xradio_wlan
