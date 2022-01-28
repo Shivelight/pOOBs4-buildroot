@@ -43,7 +43,14 @@ BR2_PACKAGE_HOSTAPD=y
 BR2_PACKAGE_DNSMASQ=y
 BR2_PACKAGE_DNSMASQ_DHCP=y
 
-# linux - wifi firmware
-# especially for board without wifi module / using USB dongle
-BR2_PACKAGE_LINUX_FIRMWARE_MEDIATEK_MT7601U=y
-BR2_PACKAGE_LINUX_FIRMWARE_RTL_81XX=y
+# nano
+BR2_PACKAGE_NANO=y
+
+## Firmware
+BR2_PACKAGE_LINUX_FIRMWARE=y
+
+# Wi-Fi (wireless) firmware
+# USB dongle, useful for board without onboard Wi-Fi
+
+# RTL8188EUS / RTL8188ETV (fw+driver)
+BR2_PACKAGE_RTL8188EU=y
