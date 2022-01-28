@@ -1,15 +1,22 @@
 #
-# pOOBs4 common defconfig
+# pOOBs4 customization start 
 #
 
-# Kernel
-BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/linux-mass-storage.config"
+## Build Options
+#BR2_CCACHE=y
+BR2_PACKAGE_OVERRIDE_FILE="$(BR2_EXTERNAL_pOOBs4_PATH)/package/package_override"
 
-# Filesystem Images
+## Toolchain
+BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
+
+## Kernel
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/linux-fragment.config"
+
+## Filesystem Images
 BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/"
 BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
 
-# Packages
+## Packages
 # use haveged for better entropy
 BR2_PACKAGE_URANDOM_SCRIPTS=n
 BR2_PACKAGE_HAVEGED=y
@@ -24,7 +31,7 @@ BR2_PACKAGE_WPA_SUPPLICANT_CLI=y
 
 # busybox
 BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox-minimal.config"
-BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/busybox-minimal-extra.config"
+BR2_PACKAGE_BUSYBOX_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/busybox-fragment.config"
 
 # openssh
 BR2_PACKAGE_OPENSSH=y
