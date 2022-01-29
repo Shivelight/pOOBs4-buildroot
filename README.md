@@ -102,3 +102,9 @@ The `root` user does not have a password. You can set a new password if you want
 [payload-guest]: https://github.com/Al-Azif/ps4-payload-guest
 [buildroot]: https://buildroot.org
 [br-external]: https://buildroot.org/downloads/manual/manual.html#outside-br-custom
+
+## License
+
+This project is licensed under the **GPL-2.0 license**.
+
+See [LICENSE](LICENSE) for more information.
