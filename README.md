@@ -87,6 +87,8 @@ You can run the actual pOOBs4 exploit either by visiting http://10.0.0.1/ from t
 
 Use [Payload Guest][payload-guest].
 
+## Customization
+
 ### Accessing the board
 
 You can SSH/SFTP to the board using the `root` user; the board IP is set to `10.0.0.1` (wlan) by default.
@@ -96,7 +98,6 @@ ssh root@10.0.0.1
 ```
 
 The `root` user does not have a password. You can set a new password if you want using `passwd`. 
-
 
 [pOOBs4]: https://github.com/ChendoChap/pOOBs4
 [payload-guest]: https://github.com/Al-Azif/ps4-payload-guest
