@@ -29,7 +29,7 @@ jobs:
           path: 'buildroot'
           token: ${{ secrets.YOUR_SECRET_NAME }}
       - name: Bulding image
-        working-directory: ./buildroot
+        working-directory: buildroot
         env:
           DEFCONFIG: ${{ matrix.defconfig }}
         run: |
@@ -39,7 +39,6 @@ jobs:
           xz -z "$DEFCONFIG".img
       - name: Uploading artifacts
         uses: actions/upload-artifact@v2
-        working-directory: ./buildroot
         with:
           name: ${{ matrix.defconfig }}.img.xz
-          path: ${{ matrix.defconfig }}.img.xz
+          path: buildroot/${{ matrix.defconfig }}.img.xz
