@@ -1,0 +1,45 @@
+name: build
+on:
+  push:
+    branches:
+    - 'feature/github-action'
+
+jobs:
+  build:
+    name: ${{ matrix.defconfig }}
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        defconfig: [orangepi_zero_poobs4_defconfig]
+    steps:
+      - name: Installing dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y cpio rsync bc
+      - name: Cloning pOOBs4-buildroot
+        uses: actions/checkout@v2
+        with:
+          repository: 'Shivelight/pOOBs4-buildroot'
+          path: 'pOOBs4-buildroot'
+      - name: Cloning buildroot
+        uses: actions/checkout@v2
+        with:
+          repository: 'Shivelight/buildroot'
+          ref: 'pOOBs4'
+          path: 'buildroot'
+          token: ${{ secrets.YOUR_SECRET_NAME }}
+      - name: Bulding image
+        working-directory: buildroot
+        env:
+          DEFCONFIG: ${{ matrix.defconfig }}
+        run: |
+          make BR2_EXTERNAL=../pOOBs4-buildroot/ $DEFCONFIG
+          make
+          mv output/images/sdcard.img "$DEFCONFIG}".img
+          xz -z "$DEFCONFIG".img
+      - name: Uploading artifacts
+        uses: actions/upload-artifact@v2
+        working-directory: buildroot
+        with:
+          name: ${{ matrix.defconfig }}.img.xz
+          path: ${{ matrix.defconfig }}.img.xz
