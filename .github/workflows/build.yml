@@ -21,6 +21,7 @@ jobs:
         with:
           repository: 'Shivelight/pOOBs4-buildroot'
           path: 'pOOBs4-buildroot'
+          submodules: 'recursive'
       - name: Cloning buildroot
         uses: actions/checkout@v2
         with:
@@ -35,7 +36,7 @@ jobs:
         run: |
           make BR2_EXTERNAL=../pOOBs4-buildroot/ $DEFCONFIG
           make
-          mv output/images/sdcard.img "$DEFCONFIG}".img
+          mv output/images/sdcard.img "$DEFCONFIG".img
           xz -z "$DEFCONFIG".img
       - name: Uploading artifacts
         uses: actions/upload-artifact@v2
