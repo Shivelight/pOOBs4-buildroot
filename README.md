@@ -9,10 +9,14 @@ This repository contains [buildroot] [external tree][br-external] for building a
 Clone the repository and buildroot from my personal repository (will be pinned to buildroot 2022.02 when it's released):
 
 ```sh
-git clone https://github.com/Shivelight/pOOBs4-buildroot
+git clone --recurse-submodules https://github.com/Shivelight/pOOBs4-buildroot
 git clone -b pOOBs4 --depth 1 https://github.com/Shivelight/buildroot
 ```
-
+Alternatively, you can shallow clone:
+```sh
+git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/Shivelight/pOOBs4-buildroot.git
+git clone -b pOOBs4 --depth 1 https://github.com/Shivelight/buildroot
+```
 Configure buildroot to use BR2_EXTERNAL tree and start building. Replace `<boardname>` with your board defconfig available in [configs/](configs) directory or from the [Supported Board](#supported-board) section:
 
 ```sh
@@ -99,13 +103,13 @@ ssh root@10.0.0.1
 
 The `root` user does not have a password. You can set a new password if you want using `passwd`. 
 
-[pOOBs4]: https://github.com/ChendoChap/pOOBs4
-[payload-guest]: https://github.com/Al-Azif/ps4-payload-guest
-[buildroot]: https://buildroot.org
-[br-external]: https://buildroot.org/downloads/manual/manual.html#outside-br-custom
-
 ## License
 
 This project is licensed under the **GPL-2.0 license**.
 
 See [LICENSE](LICENSE) for more information.
+
+[pOOBs4]: https://github.com/ChendoChap/pOOBs4
+[payload-guest]: https://github.com/Al-Azif/ps4-payload-guest
+[buildroot]: https://buildroot.org
+[br-external]: https://buildroot.org/downloads/manual/manual.html#outside-br-custom
