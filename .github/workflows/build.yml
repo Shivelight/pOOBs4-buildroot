@@ -2,7 +2,16 @@ name: build
 on:
   push:
     branches:
-    - 'feature/github-action'
+      - 'feature/github-action'
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+    paths:
+      - 'board/**'
+      - 'configs/**'
+      - 'package/**'
+  workflow_dispatch:
 
 jobs:
   build:
