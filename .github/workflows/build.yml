@@ -20,8 +20,6 @@ jobs:
     strategy:
       matrix:
         defconfig: [orangepi_zero_poobs4_defconfig]
-    env:
-      BR2_DL_DIR: "$HOME/.buildroot-dl"
     steps:
       - name: Installing dependencies
         run: |
@@ -44,8 +42,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: |
-            ~/.buildroot-ccache/**
-            ~/.buildroot-dl/**
+            ~/.buildroot-ccache
+            buildroot/dl
           key: buildroot-${{ github.sha }}
           restore-keys: buildroot-
       - name: Bulding image
