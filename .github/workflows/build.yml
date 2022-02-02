@@ -4,6 +4,10 @@ on:
     branches:
       - 'feature/github-action'
       - 'main'
+    paths:
+      - 'board/**'
+      - 'configs/**'
+      - 'package/**'
   pull_request:
     branches:
       - 'main'
