@@ -104,6 +104,53 @@ ssh root@10.0.0.1
 
 The `root` user does not have a password. You can set a new password if you want using `passwd`. 
 
+### Bring your own exploit
+
+If the default host is not your taste, you are free to use your favorite host. All you need to do is to include this snippet and call the right script at the right time, usually before `alert();` and after the exploit is done.
+
+```javascript
+function CallCgi(script) {
+    var xmlHttpRequest = new XMLHttpRequest();
+    // GET request is not working on PS4?
+    xmlHttpRequest.open("POST", "/cgi-bin/" + script, true);
+    xmlHttpRequest.send();
+}
+```
+
+Example:
+
+```javascript
+...
+chain.run();
+// Load exfathax emulation
+CallCgi("load_mass_storage"); 
+alert("\n\n⚠⚠⚠ Emulating exfathax USB ⚠⚠⚠\nClick OK when you see the 'USB unsupported' popup notification.");
+{
+	for (var i = 1; i < NUM_KQUEUES; i += 2) {
+		chain.fcall(window.syscalls[6], kqueues[i]);
+	}
+}
+chain.run();
+// Unload exfathax emulation
+CallCgi("unload_mass_storage");
+if (chain.syscall(23, 0).low == 0) {
+	return;
+}
+alert("Exploit Failed! You can unplug the USB and try again but it is advisable to reboot instead.");
+p.write8(0, 0);
+return;
+...
+```
+
+That's it. Now put your host in `/var/www/html`. You can delete everything except the `cgi-bin` directory and `exfathax.img` / `exfathax_pico.img` images.
+
+#### Available script
+
+- `load_mass_storage`
+- `unload_mass_storage`
+
+You can add your own, the scripts are located at [/var/www/html/cgi-bin](board/poobs4/common/rootfs_overlay/var/www/html/cgi-bin)
+
 ## License
 
 This project is licensed under the **GPL-2.0 license**.
