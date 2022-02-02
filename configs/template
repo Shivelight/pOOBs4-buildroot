@@ -3,7 +3,7 @@
 #
 
 ## Build Options
-#BR2_CCACHE=y
+BR2_CCACHE=y
 BR2_PACKAGE_OVERRIDE_FILE="$(BR2_EXTERNAL_pOOBs4_PATH)/package/package_override"
 
 ## Toolchain
@@ -49,8 +49,13 @@ BR2_PACKAGE_NANO=y
 ## Firmware
 BR2_PACKAGE_LINUX_FIRMWARE=y
 
-# Wi-Fi (wireless) firmware
-# USB dongle, useful for board without onboard Wi-Fi
+# Wi-Fi (wireless) firmware/driver
+# These are examples, remove if not necessary
 
+# ! On-board Wi-Fi module
+# BCM43XXX / AP6212  (fw)
+BR2_PACKAGE_LINUX_FIRMWARE_BRCM_BCM43XXX=y
+
+# ! Wi-Fi USB dongle
 # RTL8188EUS / RTL8188ETV (fw+driver)
 BR2_PACKAGE_RTL8188EU=y
