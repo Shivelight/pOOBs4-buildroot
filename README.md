@@ -34,6 +34,7 @@ The final image is saved here `output/images/sdcard.img`.
 Below is the currently supported board with defconfig ready use. 
 
 - Orange Pi Zero / Orange Pi Zero LTS [ `orangepi_zero_poobs4_defconfig` ]
+- Banana Pi M2 Zero [ `bananapi_m2_zero_poobs4_defconfig` ]
 - Raspberry Pi Zero W [ `not yet` ]
 - Raspberry Pi Zero 2 W [ `not yet` ]
 - your board?
