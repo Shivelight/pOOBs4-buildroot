@@ -9,7 +9,8 @@ iface wlan0 inet static
   address 10.0.0.1
   netmask 255.0.0.0
   network 10.0.0.0
-  broadcast 10.255.255.255" >> output/target/etc/network/interfaces
+  broadcast 10.255.255.255
+  wait-delay 15" >> output/target/etc/network/interfaces
 fi
 
 exit 0
