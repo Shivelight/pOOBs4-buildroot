@@ -8,6 +8,7 @@ on:
       - 'board/**'
       - 'configs/**'
       - 'package/**'
+      - '!**.md'
   pull_request:
     branches:
       - 'main'
@@ -15,6 +16,7 @@ on:
       - 'board/**'
       - 'configs/**'
       - 'package/**'
+      - '!**.md'
   workflow_dispatch:
 
 jobs:
