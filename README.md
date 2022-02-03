@@ -17,11 +17,11 @@ Alternatively, you can shallow clone:
 git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/Shivelight/pOOBs4-buildroot.git
 git clone -b pOOBs4 --depth 1 https://github.com/Shivelight/buildroot
 ```
-Configure buildroot to use BR2_EXTERNAL tree and start building. Replace `<boardname>` with your board defconfig available in [configs/](configs) directory or from the [Supported Board](#supported-board) section:
+Configure buildroot to use BR2_EXTERNAL tree and start building. Replace `<your_board_defconfig>` with your board defconfig available in [configs/](configs) directory or from the [Supported Board](#supported-board) section:
 
 ```sh
 cd buildroot
-make BR2_EXTERNAL=../pOOBs4-buildroot/ <boardname>_poobs4_defconfig
+make BR2_EXTERNAL=../pOOBs4-buildroot/ <your_board_defconfig>
 make
 ```
 
@@ -104,7 +104,7 @@ ssh root@10.0.0.1
 
 The `root` user does not have a password. You can set a new password if you want using `passwd`. 
 
-### Bring your own exploit
+### Bring your own exploit host
 
 If the default host is not your taste, you are free to use your favorite host. All you need to do is to include this snippet and call the right script at the right time, usually before `alert();` and after the exploit is done.
 
@@ -136,13 +136,15 @@ CallCgi("unload_mass_storage");
 if (chain.syscall(23, 0).low == 0) {
 	return;
 }
-alert("Exploit Failed! You can unplug the USB and try again but it is advisable to reboot instead.");
+alert("Exploit Failed! You can try again but it is advisable to reboot instead.");
 p.write8(0, 0);
 return;
 ...
 ```
 
-That's it. Now put your host in `/var/www/html`. You can delete everything except the `cgi-bin` directory and `exfathax.img` / `exfathax_pico.img` images.
+The default `httpd` root is `/var/www/html`. You can delete everything in there except the `cgi-bin` directory and `exfathax.img` / `exfathax_pico.img` images and copy your custom host. That's it.
+
+Alternatively, you can keep the default host intact by changing `httpd` root directory in `/etc/httpd.conf`. Copy `cgi-bin` directory and `exfathax.img` / `exfathax_pico.img` to your **new** `httpd` root, then update the scripts to match the root path.
 
 #### Available script
 
