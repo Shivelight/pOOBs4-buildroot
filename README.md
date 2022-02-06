@@ -31,7 +31,7 @@ The final image is saved here `output/images/sdcard.img`.
 
 ⚠️ _If you have a board that is not listed, feel free to contribute!_ ⚠️
 
-Below is the currently supported board with defconfig ready use. 
+Below is the currently supported board with defconfig ready use.
 
 - Orange Pi Zero / Orange Pi Zero LTS [ `orangepi_zero_poobs4_defconfig` ]
 - Banana Pi M2 Zero [ `bananapi_m2_zero_poobs4_defconfig` ]
@@ -53,8 +53,8 @@ sudo dd if=output/images/sdcard.img of=/dev/sdX bs=4M
 
 Alternatively, you can use:
 
-- [USBImager](https://bztsrc.gitlab.io/usbimager/) on Windows/Mac/Linux 
-- [balenaEtcher](https://www.balena.io/etcher/) on Windows/Mac/Linux 
+- [USBImager](https://bztsrc.gitlab.io/usbimager/) on Windows/Mac/Linux
+- [balenaEtcher](https://www.balena.io/etcher/) on Windows/Mac/Linux
 - [Rufus](https://rufus.ie) on Windows
 
 ## Updating
@@ -102,7 +102,7 @@ You can SSH/SFTP to the board using the `root` user; the board IP is set to `10.
 ssh root@10.0.0.1
 ```
 
-The `root` user does not have a password. You can set a new password if you want using `passwd`. 
+The `root` user does not have a password. You can set a new password if you want using `passwd`.
 
 ### Bring your own exploit host
 
@@ -123,7 +123,7 @@ Example:
 ...
 chain.run();
 // Load exfathax emulation
-CallCgi("load_mass_storage"); 
+CallCgi("load_mass_storage");
 alert("\n\n⚠⚠⚠ Emulating exfathax USB ⚠⚠⚠\nClick OK when you see the 'USB unsupported' popup notification.");
 {
 	for (var i = 1; i < NUM_KQUEUES; i += 2) {
@@ -142,9 +142,17 @@ return;
 ...
 ```
 
-The default `httpd` root is `/var/www/html`. You can delete everything in there except the `cgi-bin` directory and `exfathax.img` / `exfathax_pico.img` images and copy your custom host. That's it.
+####
 
-Alternatively, you can keep the default host intact by changing `httpd` root directory in `/etc/httpd.conf`. Copy `cgi-bin` directory and `exfathax.img` / `exfathax_pico.img` to your **new** `httpd` root, then update the scripts to match the root path.
+Delete everything inside the `httpd` root directory (default: `/var/www/html`) but keep:
+- `cgi-bin` directory
+- `exfathax.img` /`exfathax_pico.img`
+- `404.html`
+- `redirect.manifest`
+
+then copy your custom host. That's it.
+
+Alternatively, you can keep the default host intact by changing `httpd` root directory in `/etc/httpd.conf`. Copy the files and directory listed above to your **new** `httpd` root. You may need to update the scripts for it to be working on the new root directory.
 
 #### Available script
 
