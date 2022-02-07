@@ -20,6 +20,8 @@ struct options
     unsigned char val;
 };
 
+// https://www.usb.org/document-library/hid-usage-tables-122
+
 static struct options kmod[] = {
     {.opt = "--left-ctrl", .val = 0x01},
     {.opt = "--right-ctrl", .val = 0x10},
@@ -33,6 +35,7 @@ static struct options kmod[] = {
 
 static struct options kval[] = {
     {.opt = "--return", .val = 0x28},
+    {.opt = "--enter", .val = 0x28},
     {.opt = "--esc", .val = 0x29},
     {.opt = "--bckspc", .val = 0x2a},
     {.opt = "--tab", .val = 0x2b},
