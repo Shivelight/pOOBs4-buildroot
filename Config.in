@@ -1,0 +1,1 @@
+source "$BR2_EXTERNAL_pOOBs4_PATH/package/hid-gadget-keyboard/Config.in"

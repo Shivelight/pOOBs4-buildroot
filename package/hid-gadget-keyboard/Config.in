@@ -1,0 +1,3 @@
+config BR2_PACKAGE_HID_GADGET_KEYBOARD
+	bool "hid-gadget-keyboard"
+	default y
