@@ -29,6 +29,7 @@ jobs:
           - bananapi_m2_zero_poobs4_defconfig
           - orangepi_zero_poobs4_defconfig
           - orangepi_zero_plus2_poobs4_defconfig
+          - raspberrypi4_poobs4_defconfig
     steps:
       - name: Installing dependencies
         run: |
