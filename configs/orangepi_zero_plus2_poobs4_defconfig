@@ -103,3 +103,16 @@ BR2_PACKAGE_DNSMASQ_DHCP=y
 
 # nano
 BR2_PACKAGE_NANO=y
+
+## Firmware
+BR2_PACKAGE_LINUX_FIRMWARE=y
+
+# Wi-Fi (wireless) firmware/driver
+# remove if not necessary
+
+# ! On-board Wi-Fi module
+# BCM43XXX, firmware + driver is included by upstream
+
+# ! Wi-Fi USB dongle
+# RTL8188EUS / RTL8188ETV (fw+driver)
+BR2_PACKAGE_RTL8188EU=y

@@ -50,7 +50,7 @@ BR2_PACKAGE_NANO=y
 BR2_PACKAGE_LINUX_FIRMWARE=y
 
 # Wi-Fi (wireless) firmware/driver
-# These are examples, remove if not necessary
+# remove if not necessary
 
 # ! On-board Wi-Fi module
 # BCM43XXX / AP6212  (fw)
