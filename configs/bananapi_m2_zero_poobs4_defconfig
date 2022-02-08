@@ -70,7 +70,7 @@ BR2_LINUX_KERNEL_INSTALL_TARGET=y
 
 # Filesystem Images
 BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/ $(BR2_EXTERNAL_pOOBs4_PATH)/board/bananapi/bananapi-m2-zero/rootfs_overlay/"
-BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
+BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/bananapi/bananapi-m2-zero/post_build.sh $(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
 
 # Packages
 # use haveged for better entropy
@@ -94,9 +94,9 @@ BR2_PACKAGE_DNSMASQ_DHCP=y
 # nano
 BR2_PACKAGE_NANO=y
 
-# Firmware
+## Firmware
 BR2_PACKAGE_LINUX_FIRMWARE=y
-BR2_PACKAGE_LINUX_FIRMWARE_BRCM_BCM43XXX=y
 
-# Wi-Fi (wireless) firmware
-# USB dongle, useful for board without onboard Wi-Fi
+# ! On-board Wi-Fi module
+# BCM43XXX / AP6212  (fw)
+BR2_PACKAGE_LINUX_FIRMWARE_BRCM_BCM43XXX=y
