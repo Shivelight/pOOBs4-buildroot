@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ! grep -Fq "iface wlan0 inet static" output/target/etc/network/interfaces ; then
+if ! grep -Fq "iface wlan0 inet static" $TARGET_DIR/etc/network/interfaces ; then
 	echo "
 # for wlan0
 auto wlan0
