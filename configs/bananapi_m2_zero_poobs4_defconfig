@@ -30,16 +30,28 @@ BR2_PACKAGE_HOST_DOSFSTOOLS=y
 BR2_PACKAGE_HOST_GENIMAGE=y
 BR2_PACKAGE_HOST_MTOOLS=y
 
-# System Configuration
-BR2_TARGET_GENERIC_HOSTNAME="BananaPiZero"
+#
+# pOOBs4 customization start
+#
 
-# Bootloader ?
-BR2_TARGET_UBOOT_SPL=y
-BR2_TARGET_UBOOT_SPL_NAME="u-boot-sunxi-with-spl.bin"
+## Build Options
+BR2_CCACHE=y
+BR2_PACKAGE_OVERRIDE_FILE="$(BR2_EXTERNAL_pOOBs4_PATH)/package/package_override"
 
-# wireless driver and firmware
-BR2_PACKAGE_ARMBIAN_FIRMWARE=y
-BR2_PACKAGE_ARMBIAN_FIRMWARE_AP6212=y
+## Toolchain
+BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
+
+## Kernel
+BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/linux-fragment.config"
+
+## Filesystem Images
+BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/"
+BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
+
+## Packages
+# use haveged for better entropy
+BR2_PACKAGE_URANDOM_SCRIPTS=n
+BR2_PACKAGE_HAVEGED=y
 
 # wireless support
 BR2_PACKAGE_IW=y
@@ -48,34 +60,6 @@ BR2_PACKAGE_WIRELESS_TOOLS_LIB=y
 BR2_PACKAGE_WPA_SUPPLICANT=y
 BR2_PACKAGE_WPA_SUPPLICANT_NL80211=y
 BR2_PACKAGE_WPA_SUPPLICANT_CLI=y
-
-# spi flash support
-BR2_PACKAGE_MTD=y
-
-#
-# pOOBs4 customization start
-#
-
-# Build Options
-BR2_CCACHE=y
-BR2_PACKAGE_OVERRIDE_FILE="$(BR2_EXTERNAL_pOOBs4_PATH)/package/package_override"
-
-# Toolchain
-BR2_TOOLCHAIN_BUILDROOT_WCHAR=y
-BR2_TOOLCHAIN_BUILDROOT_LOCALE=y
-
-# Kernel
-BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="$(BR2_EXTERNAL_pOOBs4_PATH)/board/bananapi/bananapi-m2-zero/linux-extras.config $(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/linux-fragment.config"
-BR2_LINUX_KERNEL_INSTALL_TARGET=y
-
-# Filesystem Images
-BR2_ROOTFS_OVERLAY="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/ $(BR2_EXTERNAL_pOOBs4_PATH)/board/bananapi/bananapi-m2-zero/rootfs_overlay/"
-BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/bananapi/bananapi-m2-zero/post_build.sh $(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
-
-# Packages
-# use haveged for better entropy
-BR2_PACKAGE_URANDOM_SCRIPTS=n
-BR2_PACKAGE_HAVEGED=y
 
 # busybox
 BR2_PACKAGE_BUSYBOX_CONFIG="package/busybox/busybox-minimal.config"
@@ -97,6 +81,12 @@ BR2_PACKAGE_NANO=y
 ## Firmware
 BR2_PACKAGE_LINUX_FIRMWARE=y
 
+# Wi-Fi (wireless) firmware/driver
+# remove if not necessary
+
 # ! On-board Wi-Fi module
 # BCM43XXX / AP6212  (fw)
 BR2_PACKAGE_LINUX_FIRMWARE_BRCM_BCM43XXX=y
+
+# ! Wi-Fi USB dongle
+# board doesn't have a USB host port
