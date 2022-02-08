@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Load DesignWare DWC2 driver (USB OTG support)
+/sbin/modprobe dwc2
+
+# Load BCM43XXX driver
+/sbin/modprobe brcmfmac
+
+exit 0
