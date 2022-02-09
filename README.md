@@ -31,17 +31,16 @@ The final image is saved here `output/images/sdcard.img`.
 
 ⚠️ _If you have a board that is not listed, feel free to contribute!_ ⚠️
 
-Below is the currently supported board with defconfig ready use.
+Below is the currently supported board with defconfig ready to use.
 
-- Orange Pi Zero / Orange Pi Zero LTS [ `orangepi_zero_poobs4_defconfig` ]
 - Banana Pi M2 Zero [ `bananapi_m2_zero_poobs4_defconfig` ]
-- Raspberry Pi Zero W [ `not yet` ]
-- Raspberry Pi Zero 2 W [ `not yet` ]
+- Orange Pi Zero / Orange Pi Zero LTS [ `orangepi_zero_poobs4_defconfig` ]
+- Raspberry Pi 4 Model B [ `raspberrypi4_poobs4_defconfig` ]
+- Raspberry Pi Zero W [ `raspberrypi0w_poobs4_defconfig` ]
+- Raspberry Pi Zero 2 W [ `raspberrypizero2w_poobs4_defconfig` ]
 - your board?
 
 _Note: You need a board with a USB OTG port for exfathax emulation. All boards listed should have a built-in USB OTG port unless stated otherwise._
-
-<sub><sup>`not yet`: I'm willing to build and test, but currently don't have any and still waiting for restock :(</sup></sub>
 
 ## Installing
 
