@@ -141,9 +141,10 @@ return;
 ...
 ```
 
-####
+#### Installing your host
 
 Delete everything inside the `httpd` root directory (default: `/var/www/html`) but keep:
+
 - `cgi-bin` directory
 - `exfathax.img` /`exfathax_pico.img`
 - `404.html`
@@ -159,6 +160,14 @@ Alternatively, you can keep the default host intact by changing `httpd` root dir
 - `unload_mass_storage`
 
 You can add your own, the scripts are located at [/var/www/html/cgi-bin](board/poobs4/common/rootfs_overlay/var/www/html/cgi-bin)
+
+## Versioning
+
+Inspired by semver `major.minor.patch`, I decided to use `core.board.patch`.
+
+- `core`: core functionality, increase when a new function is introduced.
+- `board`: total supported board, does not reset when `core` is incremented.
+- `patch`: incremented when core function or board specific bug fix is introduced.
 
 ## License
 
