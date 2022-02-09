@@ -35,5 +35,8 @@ dtoverlay=krnbt=on
 # DesignWare DWC2 driver overlay (USB OTG support)
 dtoverlay=dwc2
 
+# Disable the rainbow splash screen
+disable_splash=1
+
 # For debugging purpose
 #enable_uart=1
