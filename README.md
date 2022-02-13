@@ -35,6 +35,7 @@ Below is the currently supported board with defconfig ready to use.
 
 - Banana Pi M2 Zero [ `bananapi_m2_zero_poobs4_defconfig` ]
 - Orange Pi Zero / Orange Pi Zero LTS [ `orangepi_zero_poobs4_defconfig` ]
+- Orange Pi Zero Plus2 [ `orangepi_zero_plus2_poobs4_defconfig` ]
 - Raspberry Pi 4 Model B [ `raspberrypi4_poobs4_defconfig` ]
 - Raspberry Pi Zero W [ `raspberrypi0w_poobs4_defconfig` ]
 - Raspberry Pi Zero 2 W [ `raspberrypizero2w_poobs4_defconfig` ]
