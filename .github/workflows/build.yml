@@ -33,6 +33,10 @@ jobs:
           - raspberrypi4_poobs4_defconfig
           - raspberrypizero2w_poobs4_defconfig
     steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.9.1
+        with:
+          access_token: ${{ github.token }}
       - name: Installing dependencies
         run: |
           sudo apt-get update
