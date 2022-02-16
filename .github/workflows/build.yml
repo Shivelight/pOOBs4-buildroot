@@ -49,7 +49,7 @@ jobs:
           repository: 'Shivelight/buildroot'
           ref: 'pOOBs4'
           path: 'buildroot'
-          token: ${{ secrets.YOUR_SECRET_NAME }}
+          token: ${{ github.token }}
       - name: Cache buildroot
         uses: actions/cache@v2
         with:
