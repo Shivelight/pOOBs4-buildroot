@@ -32,6 +32,7 @@ jobs:
           - raspberrypi0w_poobs4_defconfig
           - raspberrypi4_poobs4_defconfig
           - raspberrypizero2w_poobs4_defconfig
+      fail-fast: false
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
