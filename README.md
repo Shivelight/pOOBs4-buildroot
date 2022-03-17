@@ -170,6 +170,11 @@ Inspired by semver `major.minor.patch`, I decided to use `core.board.patch`.
 - `board`: total supported board, does not reset when `core` is incremented.
 - `patch`: incremented when core function or board specific bug fix is introduced.
 
+## Other Projects
+
+- [PS4RaspberryPi](https://github.com/PaulJenkin/PS4RaspberryPi): Similar project with more features, only Raspberry Pi boards are supported.
+- [ESP32-Server-900u](https://github.com/stooged/ESP32-Server-900u): pOOBs4 on ESP32-S2 / ESP32-S3.
+
 ## License
 
 This project is licensed under the **GPL-2.0 license**.
