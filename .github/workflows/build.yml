@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        defconfig: 
+        defconfig:
           - bananapi_m2_zero_poobs4_defconfig
           - orangepi_zero_poobs4_defconfig
           - orangepi_zero_plus2_poobs4_defconfig
@@ -51,8 +51,8 @@ jobs:
       - name: Cloning buildroot
         uses: actions/checkout@v2
         with:
-          repository: 'Shivelight/buildroot'
-          ref: 'pOOBs4'
+          repository: 'buildroot/buildroot'
+          ref: '2022.02'
           path: 'buildroot'
           token: ${{ github.token }}
       - name: Cache buildroot
