@@ -6,16 +6,17 @@ This repository contains [buildroot] [external tree][br-external] for building a
 
 ## Building
 
-Clone the repository and buildroot from my personal repository (will be pinned to buildroot 2022.02 when it's released):
+Clone the repository and download/clone buildroot 2022.02:
 
 ```sh
 git clone --recurse-submodules https://github.com/Shivelight/pOOBs4-buildroot
-git clone -b pOOBs4 --depth 1 https://github.com/Shivelight/buildroot
+git clone -b 2022.02 --depth 1 https://github.com/buildroot/buildroot
 ```
 Alternatively, you can shallow clone:
+
 ```sh
 git clone --depth 1 --recurse-submodules --shallow-submodules https://github.com/Shivelight/pOOBs4-buildroot.git
-git clone -b pOOBs4 --depth 1 https://github.com/Shivelight/buildroot
+git clone -b 2022.02 --depth 1 https://github.com/buildroot/buildroot
 ```
 Configure buildroot to use BR2_EXTERNAL tree and start building. Replace `<your_board_defconfig>` with your board defconfig available in [configs/](configs) directory or from the [Supported Board](#supported-board) section:
 
@@ -168,7 +169,7 @@ Inspired by semver `major.minor.patch`, I decided to use `core.board.patch`.
 
 - `core`: core functionality, increase when a new function is introduced.
 - `board`: total supported board, does not reset when `core` is incremented.
-- `patch`: incremented when core function or board specific bug fix is introduced.
+- `patch`: incremented when core function or board specific bug fix/change is introduced.
 
 ## Other Projects
 
