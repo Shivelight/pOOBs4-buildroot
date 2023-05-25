@@ -1,0 +1,166 @@
+[
+  {
+    "name": "Main",
+    "items": [
+      {
+        "title": "Main Menu",
+        "subtitle": "Menu Info:",
+        "desc": "Contains payloads to exploit and run homebrew on <br>your 9.00 firmware PS4.<br>Other payloads that are frequently used can also be found<br>here like FTP and Bin Loader.",
+        "icon": "&#xf30f;"
+      },
+      {
+        "title": "GoldHEN",
+        "subtitle": "By SiSTRo",
+        "desc": "<b>* PRESS R1 TO CHANGE VERSION *<br>* PRESS L1 TO SET AutoLoad After Exploit ON/OFF *</b><br>Homebrew Enabler, Enable Debug Settings, PSVR Support,<br>External HDD Support, Remote PKG Installer Support,<br>Full Rest Mode Support, Debug Trophies Support, Enable UART,<br>Enable Blocked Screenshots, FTP Server on port 2121,<br>BinLoader Server on port 9090.",
+        "icon": "<img src=\"img/hen.svg\" />",
+        "action": "loadPayload",
+        "payload": "goldhen_2.3_900.bin",
+        "trigger": {
+          "right": "changeVersion",
+          "left": "autoLoad"
+        },
+        "triggerOptions": {
+          "autoLoad": [
+            { "value": "ON", "name": "Enable GoldHEN Auto Load" },
+            { "value": "OFF", "name": "Disable GoldHEN Auto Load" }
+          ],
+          "changeVersion": [
+            { "value": "goldhen_v2.4b13.bin", "name": "v2.4b13" },
+            { "value": "goldhen_2.3_900.bin", "name": "v2.3" },
+            { "value": "goldhen_2.2.4_900.bin", "name": "v2.2.4" },
+            { "value": "goldhen_2.2.2_900.bin", "name": "v2.2.2" }
+          ]
+        }
+      },
+      {
+        "title": "Bin Loader",
+        "subtitle": "v1.0 - By Specter",
+        "desc": "Loads a bin or elf file sent to the PS4 IP address on port 9020.<br>Netcat or Netcat GUI is recommended to send the files to the PS4.",
+        "icon": "&#xf019;",
+        "action": "runBinLoader"
+      },
+      {
+        "title": "Orbis Toolbox",
+        "subtitle": "v1190 Alpha - By OSM-Made",
+        "desc": "A modification of the playstation UI to help with<br>launching and developing homebrew.",
+        "icon": "&#xf0b1;",
+        "action": "loadPayload",
+        "payload": "Orbis-Toolbox-900.bin"
+      },
+      {
+        "title": "Disable ASLR",
+        "subtitle": "v1.0 - By Al Azif",
+        "desc": "Useful if you are using an older version of GoldHEN that does<br>not disable ASLR by default.<br><br>Disables the ASLR (Address Space Layout Randomization)<br>to make working with memory easier/repeatable.",
+        "icon": "&#xf5fe;",
+        "action": "loadPayload",
+        "payload": "disable-aslr.bin"
+      }
+    ]
+  },
+  {
+    "name": "Tools",
+    "items": [
+      {
+        "title": "Tools Menu",
+        "subtitle": "Menu Info:",
+        "desc": "Contains tools to do various tasks and change things on your PS4.",
+        "icon": "&#xf30f;"
+      },
+      {
+        "title": "History Blocker",
+        "subtitle": "v2.0 - Original By Stooged / 9.00 Port By Al Azif",
+        "desc": "Disable the auto opening of the last page used in the PS4 WebBrowser.<br><br>Run the payload again to disable this feature.",
+        "icon": "&#xf686;",
+        "action": "loadPayload",
+        "payload": "HistoryBlocker.bin"
+      },
+      {
+        "title": "Disable Updates",
+        "subtitle": "v1.0 - By Al Azif",
+        "desc": "Creates dummy files in the PS4 update folder to prevent the download of unwanted system updates.<br>It also deletes any existing updates if they already exist.<br><br>! You only ever have to run this once !",
+        "icon": "&#xf771;",
+        "action": "loadPayload",
+        "payload": "UpdatesDisable.bin"
+      },
+      {
+        "title": "Enable Updates",
+        "subtitle": "v1.0 - By Al Azif",
+        "desc": "Removes the dummy files in the PS4 update folder to enable the download of updates again.<br><br>Run this if you have previously disabled updates and wish to update your console.",
+        "icon": "&#xf772;",
+        "action": "loadPayload",
+        "payload": "UpdatesEnable.bin"
+      }
+    ]
+  },
+  {
+    "name": "Backup",
+    "items": [
+      {
+        "title": "Backup Menu",
+        "subtitle": "Menu Info:",
+        "desc": "Contains various payloads to backup all aspect of useful things on your PS4.<br><br>NOTE! These backups will only work on your current Profile and accountID!<br>If you plan to initialize or replace your HDD you must also make a backup of your existing profile using the official backup/restore app in system settings!",
+        "icon": "&#xf30f;"
+      },
+      {
+        "title": "Database Backup",
+        "subtitle": "v1.0 - By Leeful",
+        "desc": "Create a backup of important database files.<br><br>A backup of your app databases will be created and saved internally on your PS4 HDD and also to USB if a USB drive is inserted.",
+        "icon": "&#xf56e;",
+        "action": "loadPayload",
+        "payload": "DBbackup.bin"
+      },
+      {
+        "title": "Database Restore",
+        "subtitle": "v1.0 - By Leeful",
+        "desc": "Contains various payloads to restore all aspect of useful things on your PS4.",
+        "icon": "&#xf56f;",
+        "action": "loadPayload",
+        "payload": "DBrestore.bin"
+      }
+    ]
+  },
+  {
+    "name": "Dumper",
+    "items": [
+      {
+        "title": "Dumper Menu",
+        "subtitle": "Menu Info:",
+        "desc": "Contains payloads to dump games from your PS4 <br>so that you can then build your own fake packages that you can install.",
+        "icon": "&#xf30f;"
+      },
+      {
+        "title": "Dump Game & Update",
+        "subtitle": "v1.9 - Original By xVortex / 9.00 Port and Mod By Leeful",
+        "desc": "Dump your games or apps to a USB drive to be able to create fpkg files.<br><br>This payload will dump your game and game update (if there is one) into two seperate folders on your USB drive.<br>No config file is needed with this payload!",
+        "icon": "&#xf1b3;",
+        "action": "loadPayload",
+        "payload": "DumperGameUpdate.bin"
+      },
+      {
+        "title": "Dump Game Only",
+        "subtitle": "v1.9 - Original By xVortex / 9.00 Port and Mod By Leeful",
+        "desc": "Dump your games or apps to a USB drive to be able to create fpkg files.<br><br>This payload will dump just your game on your USB drive.<br><br>No config file is needed with this payload!",
+        "icon": "&#xf1b2;",
+        "action": "loadPayload",
+        "payload": "DumperGame.bin"
+      },
+      {
+        "title": "Dump Update Only",
+        "subtitle": "v1.9 - Original By xVortex / 9.00 Port and Mod By Leeful",
+        "desc": "Dump your games or apps to a USB drive to be able to create fpkg files.<br><br>This payload will dump just your game update to your USB drive.<br><br>No config file is needed with this payload!",
+        "icon": "&#xf1b2;",
+        "action": "loadPayload",
+        "payload": "DumperUpdate.bin"
+      },
+      {
+        "title": "Dump & Merge Game + Update",
+        "subtitle": "v1.9 - Original By xVortex / 9.00 Port and Mod By Leeful",
+        "desc": "Dump your games or apps to a USB drive to be able to create fpkg files.<br><br>This payload will dump your game and game update (if there is one) and merge them into one folder on your USB drive.<br>No config file is needed with this payload!",
+        "icon": "&#xf1b3;",
+        "action": "loadPayload",
+        "payload": "DumperMergeGameUpdate.bin"
+      }
+    ]
+  },
+  { "name": "Linux", "items": [] }
+]

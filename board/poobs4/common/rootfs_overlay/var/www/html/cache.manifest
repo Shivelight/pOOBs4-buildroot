@@ -1,0 +1,25 @@
+CACHE MANIFEST
+/assets/index-2251c9ec.js
+/assets/index-b9d060b1.css
+/cache.html
+/exploit.js
+/index.html
+/menu.json
+/payloads/DBbackup.bin
+/payloads/DBrestore.bin
+/payloads/DumperGame.bin
+/payloads/DumperGameUpdate.bin
+/payloads/DumperMergeGameUpdate.bin
+/payloads/DumperUpdate.bin
+/payloads/HistoryBlocker.bin
+/payloads/Orbis-Toolbox-900.bin
+/payloads/UpdatesDisable.bin
+/payloads/UpdatesEnable.bin
+/payloads/disable-aslr.bin
+/payloads/goldhen_2.2.2_900.bin
+/payloads/goldhen_2.2.4_900.bin
+/payloads/goldhen_2.3_900.bin
+/payloads/goldhen_v2.4b13.bin
+#2958f06a4ea07ede2aa7b642f185f7b4
+NETWORK:
+*
