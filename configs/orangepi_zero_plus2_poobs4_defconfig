@@ -82,7 +82,7 @@ BR2_LINUX_KERNEL_CONFIG_FRAGMENT_FILES="board/orangepi/orangepi-zero-plus2/linux
 
 ## Filesystem Images
 BR2_ROOTFS_OVERLAY="board/orangepi/orangepi-zero-plus2/rootfs_overlay $(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/rootfs_overlay/"
-BR2_ROOTFS_POST_BUILD_SCRIPT="$(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
+BR2_ROOTFS_POST_BUILD_SCRIPT="board/orangepi/common/post-build.sh $(BR2_EXTERNAL_pOOBs4_PATH)/board/poobs4/common/post_build.sh"
 
 ## Packages
 # use haveged for better entropy
